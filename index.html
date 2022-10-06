@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+	<head>
+		<!-- <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css"> -->
+		<link rel="stylesheet" href="./style.css" type="text/css">
+		<style type="text/css">
+			.text-div {color: white;}
+		</style>
+	</head>
+	<body>
+		<div class="date-selector">
+			<div class="year" id="year1"></div>
+			<div class="month" id="month1"></div>
+			<div class="day" id="day1"></div>
+			<div class="hour" id="hour"></div>
+			<div class="minute" id="minute"></div>
+		</div>
+
+		<div>
+			<div class="text-div" id="result">샘플</div>
+			<input type="text" name="test" id="result_input">
+		</div>
+		
+		<!-- <div class="hour-selector">
+		</div> -->
+		<script src="./javascript.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			// 콜백
+			function dateTimeCallback(year, month, date, hour, minute) {
+				console.debug(year, month, date, hour, minute);
+				document.querySelector("#result").innerHTML = `${year}년 ${month}월 ${date}일 ${hour}시 ${minute}분`;
+				document.querySelector("#result_input").value = `${year}년 ${month}월 ${date}일 ${hour}시 ${minute}분`;
+			}
+			// datetime picker 실행
+			dateTimePicker(dateTimeCallback);
+		</script>
+	</body>
+</html>
